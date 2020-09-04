@@ -1,57 +1,81 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    var html = '<div class="coffee">';
+    // html += '< class="id-selection">' + coffee.id + '</>';
+    html += '<h3 class="name-selection card-title">' + coffee.name + '</h3>';
+    html += '<h5 class="roast-selection card-subtitle mb-2 text-muted">' + coffee.roast + '</h5>';
+    // tml += '<p class="card-text">' + coffee.description + '</p>';
+    html += '</div>';
 
     return html;
 }
 
 function renderCoffees(coffees) {
-    var html = '';
+    var html = ' ';
     for(var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
 
-function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+function updateCoffees() {
+    // e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
+        if (coffee.roast === selectedRoast || selectedRoast === "All") {
+            if(coffee.name.toLowerCase().includes(myInput.value.toLowerCase()))
+                filteredCoffees.push(coffee);
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+var createCoffee = document.querySelector('#submit4');
+createCoffee.addEventListener('click', function(e){
+    e.preventDefault()
+    var addCoffeeRoast = document.getElementById('roast-selection2')
+    var newCoffeeName = document.getElementById('newCoffee')
+    if(newCoffeeName !== ""){
+        newCoffee(addCoffeeRoast.value, newCoffeeName.value);
+        updateCoffees();
+    }
+});
+
+var newCoffee = function (type, name){
+    var newCoffeeObj = {id: coffees.length + 1, name: name, roast: type};
+    console.log (newCoffeeObj);
+    coffees.push(newCoffeeObj);
+    console.log(coffees)
+}
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    {id: 1, name: 'Pop Off', roast: 'light'},
+    {id: 2, name: 'Tail', roast: 'light'},
+    {id: 3, name: 'Zoom', roast: 'light'},
+    {id: 4, name: 'Jet', roast: 'medium'},
+    {id: 5, name: 'Erase', roast: 'medium'},
+    {id: 6, name: 'Copycat', roast: 'medium'},
+    {id: 7, name: 'Explosion', roast: 'dark'},
+    {id: 8, name: 'Dark Shadow', roast: 'dark'},
+    {id: 9, name: 'Decay', roast: 'dark'},
+    {id: 10, name: 'Blackhole', roast: 'dark'},
+    {id: 11, name: 'Fiber Master', roast: 'dark'},
+    {id: 12, name: 'Half Hot Half Cold', roast: 'dark'},
+    {id: 13, name: 'All For One', roast: 'dark'},
+    {id: 14, name: 'One For All', roast: 'dark'},
 ];
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var myInput = document.getElementById("myInput")
 
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+myInput.addEventListener("keyup", function(){
+    updateCoffees(myInput.value)
+})

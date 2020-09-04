@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
+</head>
+<body>
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoicGxhcmtpbjQxMjIiLCJhIjoiY2tlZDczMDh6MGl4YTJ4cDMzemJnZTM1bSJ9.X8pyfxWoyfKsg3oj7wNWsw';
+	var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+		center: [-98.4916, 29.4260], // starting position [lng, lat]
+		zoom: 9 // starting zoom
+	});
+		var popup = new mapboxgl.Popup()
+				.setLngLat([-98.489615, 29.426827])
+				.setHTML("<p>Codeup Rocks!</p>")
+				.addTo(map)
+
+		var alamoPopup = new mapboxgl.Popup()
+				.setHTML("<p>Remember The Alamo!</p>")
+				.addTo(map)
+
+		marker.setPopup(alamoPopup)
+</script>
+</body>
+</html>
