@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Duck Coffee Co.</title>
+    <!--------------------------------------Main Coffee CSS------------------------------------------------>
+    <link rel="stylesheet" href="css/locations.css">
+
+    <!--------------------------------------Bootstrap------------------------------------------------>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--------------------------------------JQUERY SCRIPTS------------------------------------------------>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+    <!---------------------------------------Font Awesome--------------------------------------------------->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+          integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <!---------------------------------------Mapbox--------------------------------------------------->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
+</head>
+<body>
+<!---------------------------------------NavBar--------------------------------------------------->
+<div class="navbar">
+    <!--Logo-->
+    <a class="company-logo" href="#">
+        <img src="img/logo.png" alt="company-logo">
+    </a>
+
+    <!--Links-->
+    <ul>
+        <!--HomePage-->
+        <li class="links">
+            <a class="nav-link" href="coffeeshop.html">Duck Coffee Co.</a>
+        </li>
+        <!--About Disabled-->
+        <li class="links">
+            <a class="nav-link" href="aboutcoffee.html">About Us</a>
+        </li>
+        <!--Locations-->
+        <li class="links">
+            <a class="nav-link" href="storelocations.html">Locations</a>
+        </li>
+        <!--Cart-->
+        <li class="links">
+            <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+    </ul>
+</div>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoicGxhcmtpbjQxMjIiLCJhIjoiY2tlZDczMDh6MGl4YTJ4cDMzemJnZTM1bSJ9.X8pyfxWoyfKsg3oj7wNWsw';
+	var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+		center: [-98.4916, 29.4260], // starting position [lng, lat]
+		zoom: 9 // starting zoom
+	});
+	var popup = new mapboxgl.Popup()
+			.setLngLat([-98.489615, 29.426827])
+			.setHTML("<p>Codeup Rocks!</p>")
+			.addTo(map)
+
+	var alamoPopup = new mapboxgl.Popup()
+			.setHTML("<p>Remember The Alamo!</p>")
+			.addTo(map)
+
+	marker.setPopup(alamoPopup)
+</script>
+</body>
+</html>

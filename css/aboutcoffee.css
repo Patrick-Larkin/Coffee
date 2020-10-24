@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*border: 2px black solid;*/
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 400px) and (max-width: 999px) {
+    body {
+        margin: 5px 8px;
+    }
+
+    /*----------------------------------Navbar---------------------------------->*/
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        padding: 2px 5px 2px 5px;
+    }
+
+    .company-logo {
+        justify-content: center;
+    }
+
+    .navbar ul {
+        text-decoration: none;
+        list-style-type: none;
+        width: 100%;
+        margin: 5px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .links:nth-child(1) {
+        font-size: 42px;
+        flex-grow: 4;
+
+    }
+
+    .links:nth-child(2) {
+        font-size: 42px;
+        flex-grow: 2.5;
+        align-self: center;
+    }
+
+    .links:nth-child(3) {
+        font-size: 42px;
+        flex-grow: 2.5;
+        align-self: center;
+    }
+
+    .links:nth-child(4) {
+        align-items: center;
+        align-content: center;
+        font-size: 30px;
+        flex-grow: 1;
+        align-self: center;
+    }
+
+    .nav-link {
+        color: black;
+    }
+
+    /*----------------------------------Main ---------------------------------->*/
+    .main {
+        margin: 3px 8px 0 8px;
+        padding: 10px 10px 0 10px;
+    }
+
+    .main-info p {
+        font-size: 30px;
+        margin-bottom: 3px;
+    }
+
+
+    /*----------------------------------Subgroup---------------------------------->*/
+    /*Sub-Info IMGs*/
+    #perfect-roast {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #mass-coffee {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #back-the-blue {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /*Sub-Info txt*/
+    .sub-info h2{
+        font-size: 40px;
+    }
+    .sub-info p{
+        font-size: 25px;
+    }
+
+
+    /*----------------------------------Profile---------------------------------->*/
+    .profile {
+        margin: 10px 4px 0 0;
+        text-align: center;
+    }
+
+
+    .profile-img {
+        display: inline-block;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    .profile-img img {
+        width: auto;
+        height: 100%;
+        margin-left: -50px;
+    }
+
+    .profile ul {
+        text-decoration: none;
+        list-style-type: none;
+        width: 100%;
+        margin: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+
+    .links:nth-child(5) {
+        font-size: 42px;
+        flex-grow: 4;
+
+    }
+    .links:nth-child(6) {
+        font-size: 42px;
+        flex-grow: 2.5;
+        align-self: center;
+    }
+    .links:nth-child(7) {
+        font-size: 42px;
+        flex-grow: 2.5;
+        align-self: center;
+    }
+    .links:nth-child(8) {
+        align-items: center;
+        align-content: center;
+        font-size: 30px;
+        flex-grow: 1;
+        align-self: center;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1000px) {
+    body {
+        margin: 5px 8px;
+    }
+
+    /*----------------------------------Navbar---------------------------------->*/
+    .navbar {
+        display: flex;
+        padding: 2px 5px 2px 5px;
+        width: 100%;
+    }
+
+    .company-logo {
+        display: inline-flex;
+    }
+
+    .navbar ul {
+        text-decoration: none;
+        list-style-type: none;
+        margin: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .links:nth-child(2) {
+        font-size: 25px;
+        align-self: center;
+        margin: 0 auto;
+    }
+
+    .links:nth-child(3) {
+        font-size: 25px;
+        align-self: center;
+        margin: 0 auto;
+    }
+
+    .links:nth-child(4) {
+        font-size: 25px;
+        align-self: center;
+        margin: 0 auto;
+    }
+
+    .links:nth-child(5) {
+        align-items: center;
+        align-content: center;
+        font-size: 30px;
+        align-self: center;
+        margin: 0 auto;
+    }
+
+    .nav-link {
+        color: yellow;
+    }
+
+    /*----------------------------------Main ---------------------------------->*/
+    .main {
+        margin: 3px 8px 0 8px;
+        padding: 10px 10px 0 10px;
+    }
+
+    .main-info p {
+        font-size: 30px;
+        margin-bottom: 3px;
+    }
+
+
+    /*----------------------------------Subgroup---------------------------------->*/
+    /*Sub-Info IMGs*/
+    #perfect-roast {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #mass-coffee {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #back-the-blue {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /*Sub-Info txt*/
+    .sub-info h2{
+        font-size: 40px;
+    }
+    .sub-info p{
+        font-size: 25px;
+    }
+
+
+    /*----------------------------------Profile---------------------------------->*/
+    .profile {
+        margin: 10px 4px 0 0;
+        text-align: center;
+    }
+
+
+    .profile-img {
+        display: inline-block;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    .profile-img img {
+        width: auto;
+        height: 100%;
+        margin-left: -50px;
+    }
+
+    .profile ul {
+        text-decoration: none;
+        list-style-type: none;
+        width: 100%;
+        margin: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+
+    .links:nth-child(5) {
+        font-size: 42px;
+        flex-grow: 4;
+
+    }
+    .links:nth-child(6) {
+        font-size: 42px;
+        flex-grow: 2.5;
+        align-self: center;
+    }
+    .links:nth-child(7) {
+        font-size: 42px;
+        flex-grow: 2.5;
+        align-self: center;
+    }
+    .links:nth-child(8) {
+        align-items: center;
+        align-content: center;
+        font-size: 30px;
+        flex-grow: 1;
+        align-self: center;
+    }
+}
